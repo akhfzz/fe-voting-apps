@@ -4,9 +4,11 @@ import {
 import axios from "axios";
 import {isLoggedIn} from '../component/services/auth'
 
+const url = `https://be-vote-app-v2.herokuapp.com/`;
+
 export const addOrganisasi = obj => {
   return (dispatch) => {
-      axios.post('http://127.0.0.1:5000/daftar', obj, {
+      axios.post(url+`daftar`, obj, {
         headers:{
         'Accept': 'application/json',
        'Content-Type': 'application/json',
@@ -24,7 +26,7 @@ export const addOrganisasi = obj => {
 
 export const OrganisasiIn = (obj, token) => {
     return (dispatch) => {
-        axios.post('http://127.0.0.1:5000/login', obj, {
+        axios.post(url+`login`, obj, {
             headers:{
                 'Accept': 'application/json',
                'Content-Type': 'application/json',
@@ -48,7 +50,7 @@ export const OrganisasiIn = (obj, token) => {
 
 export const fetchUser = () => {
     return dispatch => {
-        axios.get(`http://127.0.0.1:5000/getting/`+localStorage.getItem('nm_organisasi'), {
+        axios.get(url+`getting/`+localStorage.getItem('nm_organisasi'), {
             headers:{
             'Accept': 'application/json',
            'Content-Type': 'application/json'
@@ -66,7 +68,7 @@ export const fetchUser = () => {
 
 export const sendingEmail = () => {
     return dispatch => {
-        axios.post(`http://127.0.0.1:5000/mail/`+localStorage.getItem('nm_organisasi'))
+        axios.post(url+`mail/`+localStorage.getItem('nm_organisasi'))
         .then(response => {
             dispatch({
                 type: email,
@@ -78,7 +80,7 @@ export const sendingEmail = () => {
 
 export const uploadFileMHS = obj => {
     return dispatch => {
-        axios.post(`http://127.0.0.1:5000/inputFile/`+localStorage.getItem('nm_organisasi'), obj, {
+        axios.post(url+`inputFile/`+localStorage.getItem('nm_organisasi'), obj, {
         headers:{
             'Accept': 'application/json',
            'Content-Type': 'application/json'
@@ -98,7 +100,7 @@ export const uploadFileMHS = obj => {
 }
 export const userSignin = (obj, token) => {
     return dispatch => {
-        axios.post('http://127.0.0.1:5000//userSignin', obj, {
+        axios.post(url+`userSignin`, obj, {
             headers:{
                 'Accept': 'application/json',
                'Content-Type': 'application/json',
@@ -122,7 +124,7 @@ export const userSignin = (obj, token) => {
 }
 export const nameOfCandidate = obj => {
     return dispatch => {
-        axios.post(`http://127.0.0.1:5000/candidate/`+localStorage.getItem('id'), obj)
+        axios.post(url+`candidate/`+localStorage.getItem('id'), obj)
         .then(response => {
             dispatch({
                 type: candidate,
@@ -135,7 +137,7 @@ export const nameOfCandidate = obj => {
 
 export const votingToday = (obj) => {
     return dispatch => {
-        axios.post(`http://127.0.0.1:5000/voting/`+localStorage.getItem('access_token')+`/`+localStorage.getItem('id'), obj)
+        axios.post(url+`voting/`+localStorage.getItem('access_token')+`/`+localStorage.getItem('id'), obj)
         .then(response =>{
             dispatch({
                 type: vote_today,
@@ -147,7 +149,7 @@ export const votingToday = (obj) => {
 
 export const visualVote = () => {
     return dispatch => {
-        axios.get(`http://127.0.0.1:5000/visual/`+localStorage.getItem('id'))
+        axios.get(url+`visual/`+localStorage.getItem('id'))
         .then(response =>{
             dispatch({
                 type: visual,
@@ -159,7 +161,7 @@ export const visualVote = () => {
 
 export const identityCandidate = obj => {
     return dispatch => {
-        axios.post(`http://127.0.0.1:5000/identity/`+localStorage.getItem('id_kandidat'), obj)
+        axios.post(url+`identity/`+localStorage.getItem('id_kandidat'), obj)
         .then(response=> {
             dispatch({
                 type: identity,
@@ -173,7 +175,7 @@ export const identityCandidate = obj => {
 }
 export const VotingUsr = () => {
     return dispatch => {
-        axios.get(`http://127.0.0.1:5000/vote/` + localStorage.getItem('nm_organisasi'))
+        axios.get(url+`vote/` + localStorage.getItem('nm_organisasi'))
         .then(response =>{
             dispatch({
                 type: voting,
