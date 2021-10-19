@@ -1,0 +1,12 @@
+export const signup_success = 'created';
+export const signin_success = 'signin';
+export const user_signin = 'login';
+export const uploadDataMhs = 'uploaded';
+export const candidate = 'data';
+export const identity = 'identity';
+export const table_user = 'table_db';
+export const voting = 'vote';
+export const email = 'sent';
+export const fail = 'fail';
+export const vote_today = 'OK';
+export const visual = 'Great'

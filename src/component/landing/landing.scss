@@ -1,0 +1,302 @@
+*{
+    box-sizing: border-box;
+}
+@mixin display-wrap {
+    display: flex;
+    flex: wrap;
+    justify-content: center;
+}
+
+//Large Screen - 993 to 1170 screen size
+@mixin lg-screen{
+    @media only screen and (max-width: 1170px) {
+        @content;
+    }
+}
+
+//Medium Screen - 768 to 992 screen size
+@mixin md-screen{
+    @media only screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+//Medium Screen - 575 to 767 screen size
+@mixin sm-screen{
+    @media only screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+//Medium Screen - below 575 screen size
+@mixin xs-screen{
+    @media only screen and (max-width: 575px) {
+        @content;
+    }
+}
+
+body{
+    margin: 0;
+}
+.ultra{
+    list-style-type: None;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(113, 238, 113);
+}
+.list-right{
+    float: right;
+}
+.list-left{
+    float: left;
+}
+.list-right a, .list-left a{
+    text-decoration: None;
+    color: black;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+}
+.list-right a{
+    @include xs-screen{
+        font-size: 10px;
+    }
+}
+.list-left a{
+    @include xs-screen{
+        font-size: 12px;
+    }
+}
+.list-right a:hover, .list-left a:hover{
+    margin: none;
+    padding: none;
+    color: white;
+}
+.picturer-carousel2{
+    height: 30%;
+    width: 38%;
+    margin-left: auto;
+    margin-right: auto;
+    image-resolution: 360dpi;
+    background-color: rgb(63, 126, 87);
+    @include xs-screen{
+        height: 300px;
+        width: 200px;
+    }
+}
+.brand{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+}
+.carousel-item{
+    background-color: rgba(252, 251, 250, 0.973);
+}
+.picturer-carousel1{
+    height: 30%;
+    width: 38%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 0;
+    @include xs-screen{
+        height: 300px;
+    }
+}
+.caption-univ{
+    color: black;
+    z-index: 2;
+    position: relative;
+    bottom: 0;
+    font-size: 40%;
+    @include xs-screen{
+        font-size: 10px;
+        top: 20px;
+    }
+}
+.carousel {
+    width:100%;
+    height: 50%;
+    margin: 0;
+    z-index: 2;
+  }
+.box{
+    @include display-wrap
+}
+.form-box{
+    margin-top: 13%;
+    flex-basis: 20em;
+}
+.input-user, .user-submit{
+    width: 100%;
+    margin: 3%;
+}
+.products{
+    @include display-wrap
+}
+.child-products{
+    margin-top: 250px;
+    margin-right: 40px;
+    @include sm-screen{
+        margin-top: 100px;
+    }
+    @include xs-screen{
+        margin-top: 200px;
+        margin-right: 10px;
+    }
+}
+
+.logo-product{
+    @include sm-screen{
+        margin-top: 200px
+    }
+    @include xs-screen{
+        height: 60px;
+        width: 80px;
+        margin-top: 180px;
+    }
+}
+.headerUp{
+    font-size: 20px;
+    text-align: center;
+}
+.input-user{
+    height: 2.5em;
+    padding: 2%;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+}
+.input-user:focus{
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    outline: none !important;
+}
+.user-submit{
+    border-radius: 5px;
+    background-color: rgb(226, 230, 213);
+    padding: 3px;
+    font-size: 15px;
+}
+.user-submit:hover{
+    background-color: rgb(113, 238, 113);
+}
+footer{
+    text-align: center;
+    background-color: rgb(11, 172, 11);
+    font-size: 15px;
+    padding: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.address, .universitas-name{
+    text-align: center;
+    @include xs-screen{
+        font-size: 15px;
+    }
+}
+.main{
+    height: 30vh;
+}
+.x{
+    flex-direction: row;
+}
+.x a{
+    width: 60px;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color: white;
+    margin: 1rem;
+    background: black;
+    position: relative;
+    transition: all 0.4s;
+}
+.x a:hover{
+    transform: scale(0.9);
+}
+.footer{
+    background-color: rgb(113, 238, 113);
+}
+.text-footer{
+    text-align: center;
+    margin-top: 20%;
+    padding: 5%;
+    @include xs-screen{
+        font-size: 17px;
+        padding: 30px;
+    }
+}
+.alert-user{
+    font-size: 15px;
+    text-align: center;
+}
+.x a::before{
+    content: attr(data-text);
+    position: absolute;
+    top: -70px;
+    left: -40px;
+    font-family: cursive;
+    border-radius: 50px;
+    width: 150px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: white;
+    background: black;
+    display: none;
+}
+.x a:hover::before{
+    display: flex;
+}
+.x a::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    background: white;
+    transform: scale(0);
+    transition: all 0.4s;
+}
+.x a:hover::after{
+    transform: scale(1);
+}
+.x a svg{
+    z-index: 20;
+    transition: all 0.4s;
+}
+.x a:hover svg{
+    color: black;
+}
+.footer{
+    position: relative;
+    top: 20%;
+}
+.policy-system{
+    margin: 9%;
+    padding: 0;
+    @include xs-screen{
+        margin-top: 70px;
+    }
+}
+.header{
+    font-size: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    font-family: sans-serif;
+}
+.requir{
+    font-size: 15px;
+}
