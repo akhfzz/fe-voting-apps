@@ -101,7 +101,7 @@ export function SistemVisual(state=stateVisual, action){
                     labels: action.payload.nama_kandidat,
                     datasets: [
                         {
-                            label: '# of Votes',
+                            label: `Choice`,
                             data: action.payload.total,
                             backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',

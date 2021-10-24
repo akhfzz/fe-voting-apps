@@ -138,7 +138,6 @@ td{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
     @include sm-screen{
-        margin-top: 60px;
         image-resolution: 2.5dpi;
     }
 }
@@ -174,8 +173,10 @@ td{
 }
 .submit-datasset{
     background-color: chartreuse;
+    height: 35px;
     @include xs-screen{
         font-size: 10px;
+        width: 100%;
     }
 }
 .form-identity{
@@ -188,6 +189,9 @@ td{
 }
 .header{
     font-size: 15px;
+}
+.message-of-suspense{
+    margin-top: 200px;
 }
 #nama, #no_kandidat, #foto, #visi_misi, #fakultas{
     width: 98%;
@@ -205,7 +209,7 @@ td{
     outline: none !important;
 }
 .upload{
-    margin-left: 20px;
+    justify-content: center;
 }
 .save{
     width: 100%;
@@ -226,6 +230,15 @@ td{
     border-right: none !important;
     border-top: none !important;
     outline: none !important;
+}
+#type, #url{
+    width: 100%;
+    padding: 4px;
+    @include md-screen{
+    }
+    @include sm-screen{
+        margin-bottom: 10px;
+    }
 }
 .title{
     text-align: center;

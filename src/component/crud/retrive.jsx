@@ -5,7 +5,7 @@ import {UserNav} from './userNav';
 import TableUser from "./tableUser";
 import './usernav.scss';
 import {AlertInfo} from './komponenTable'
-import {Container} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {LogoutOrganisasi} from '../services/auth';
 
@@ -18,8 +18,8 @@ class ProfilOrganisasi extends React.Component{
         this.sentMail = this.sentMail.bind(this)
 
         this.state = {
-            input: '',
-            coppySuccess: ''
+            url: '',
+            type: '',
         }
     }
 
@@ -33,10 +33,7 @@ class ProfilOrganisasi extends React.Component{
     
     uploadFileMHS(e){
         e.preventDefault();
-        const form = new FormData();
-        form.append('file', this.file.current.files[0].name);
-        // form.append('nm_organisasi', this.nm_organisasi.current.value)
-        this.props.uploadFileMHS(form)
+        this.props.uploadFileMHS(this.state)
     }
     
     sentMail(e){
@@ -47,12 +44,21 @@ class ProfilOrganisasi extends React.Component{
         return(
             <div>
                 <UserNav datasset='/input-datasset' visual='/visual-organisasi' kandidat='/candidate' logout={LogoutOrganisasi}/>
-                <AlertInfo heading={localStorage.getItem('nm_organisasi')} info={<p className='mb-0'>Before you use our system, read the documentation</p>}/>
+                <AlertInfo heading={localStorage.getItem('nm_organisasi')} info={<p className='mb-0'>Read our documentation before using the system</p>}/>
                 <p className='message-of-python'>{this.props.success_message || this.props.file || this.props.error}</p>
                 <Container>
-                    <form className='upload'>
-                        <input type='file' ref={this.file} name='file' id='file' placeholder='File must xlsx or csv'/>
-                        <button className='submit-datasset' onClick={this.uploadFileMHS} >Submit</button>
+                    <form className='upload' encType='multipart/form-data'>
+                        <Row>
+                            <Col sm={4}>
+                                <input type='text' name='url' id='url' onChange={this.handleChange} value={this.state.url} placeholder='Link google drive'/>
+                            </Col>
+                            <Col sm={4}>
+                                <input type='text' name='type' id='type' placeholder='excel or csv' onChange={this.handleChange} value={this.state.type}/>
+                            </Col>
+                            <Col sm={4}>
+                                <button className='submit-datasset' onClick={this.uploadFileMHS}>Submit</button>
+                            </Col>
+                        </Row>
                     </form>
                 </Container>
                 <TableUser/>
@@ -61,11 +67,6 @@ class ProfilOrganisasi extends React.Component{
     }
 }
 
-
-// /input-datasset
-// /candidate 
-// LogoutOrganisasi
-// #vote
 const mapStateToProps = state => {
     return { 
         file: state.file.file,

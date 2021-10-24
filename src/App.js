@@ -3,12 +3,12 @@ import signPage from './component/sign/signPage';
 import { Routing, Routing2 } from './component/routing/routing';
 import { isLoggedIn } from './component/services/auth';
 import ProfilOrganisasi from './component/crud/retrive';
-import UserPage from './component/crud/userVote';
 import {Documentation} from './component/landing/documentation'
 import Candidate from './component/crud/candidat';
 import {SuspenseLoading} from './component/landing/suspense';
 import GrafikUser from '../src/component/crud/visualisasi';
-import GrafikOrganisasi from '../src/component/crud/visualorganisasi'
+import GrafikOrganisasi from '../src/component/crud/visualorganisasi';
+import UserPage from '../src/component/crud/userVote'
 
 function App() {
   return (

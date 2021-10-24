@@ -7,6 +7,7 @@ const LandingPage = lazy(() => {
     });
   });
 
+
 export function SuspenseProduct(){
     return(
         <div className='products'>

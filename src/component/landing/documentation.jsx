@@ -21,11 +21,10 @@ export function Documentation(){
                 <p className='requir'>Photos should have a size under 16MB</p>
                 <p className='requir'>Organization must have dataset of voters before getting access token for voters</p>
                 <p className='requir'>The datasset format must have some column (NIM, Nama, Email, Handphone)</p>
-                <p className='requir'>Datasset must be save in './Documents' directory or folder</p>
-                <p className='requir'>Datasset should upload in device PC/Laptop</p>
+                <p className='requir'>Upload datasset to google drive and give our system your links and type file (excel or csv)</p>
+                <p className='requir'>Shared link your google drive must be approved by the accessor first</p>
                 <p className='requir'>Use your organization name for user and give their access token in your datasset</p>
                 <p className='requir'>Before voters login and the voting started, organization should sent access token to voters</p>
-                <p className='requir'>Give unique name for your admin account because if you forget your password, and want to change it, simply re-register with the 'username' key, your account data will be automatically replaced</p>
                 <p className='requir'>Admin doesn't need to delete because the data will be automatically deleted by the system within the specified deadline</p>
                 <p className='requir'>System will delete data if event passes the deadline 6 days</p>
                 <p className='requir'>Candidate data will be updated according on key in form event name and number of candidate</p>

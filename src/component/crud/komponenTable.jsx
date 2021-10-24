@@ -15,7 +15,6 @@ export const DataUser = ({posted, load, ...props}) => {
                 <thead>
                     <tr>
                         <th>NIM</th>
-                        <th>Nama</th>
                         <th>Email</th>
                         <th>Token</th>
                     </tr>
@@ -24,7 +23,6 @@ export const DataUser = ({posted, load, ...props}) => {
                 {posted.map((data)=>(
                     <tr key={data.index}>
                         <td>{data.NIM}</td>
-                        <td>{data.Nama}</td>
                         <td>{data.Email}</td>
                         <td>{data.access_token}-xxx-xxx</td>
                     </tr>

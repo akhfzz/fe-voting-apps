@@ -140,11 +140,10 @@ body{
         margin-top: 100px;
     }
     @include xs-screen{
-        margin-top: 200px;
+        margin-top: 100px;
         margin-right: 10px;
     }
 }
-
 .logo-product{
     @include sm-screen{
         margin-top: 200px
