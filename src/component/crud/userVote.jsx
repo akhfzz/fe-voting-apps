@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import './usernav.scss';
 import {Col, Container, Row, Alert} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Footer} from '../landing/landing';
 import '../landing/landing.scss';
 import Aos from "aos";
 import 'aos/dist/aos.css';
@@ -16,8 +17,7 @@ class UserPage extends Component{
         super(props);
         this.submit=this.submit.bind(this);
         this.state={
-            no_choice: '',
-            loading:false
+            no_choice: ''
         }
     }
     componentDidMount(){
@@ -33,8 +33,12 @@ class UserPage extends Component{
         const form = new FormData()
         form.append('no_choice', e.target.value)
         this.props.votingToday(form)
+        // this.setState({
+        //     no_choice: ''
+        // })
     }
     render(){
+    
         return(
             <div>
                 <UsersNav check='/user' visual='/visual' logout={Logout}/>
@@ -67,6 +71,7 @@ class UserPage extends Component{
                         ))}
                     </Row>
                 </Container>
+                <Footer/>
             </div>
         )
     }
