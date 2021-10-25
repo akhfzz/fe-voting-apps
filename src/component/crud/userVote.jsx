@@ -11,45 +11,6 @@ import 'aos/dist/aos.css';
 import { votingToday } from '../../redux/action'
 import {UsersNav} from './userNav'
 
-function ExtractData(props){
-    if(props.loading == true){
-        return(
-            <h5>Loading</h5>
-        )
-    }
-    if(props.err){
-        <Container>
-            <h4 className='message-of-python'>{props.err}</h4>
-        </Container>
-    }else{
-        return(
-            <Container>
-                <h4 className='message-of-python'>{props.success||props.error}</h4>
-                <Row>
-                    {props.api && props.api.map(data=>(
-                        <Col sm={6}>
-                            <div key={data.id} className='parent-vote'>
-                                <div className='for-image'>
-                                    <p className='name-candidate'>{data.nama}</p>
-                                    <img src={'data:image/png;base64, '+data.foto} alt={data.nama} className='image-vote'/>
-                                    <div className='overlay'>
-                                        <p className='text'>{data.visi_misi}</p>
-                                    </div>
-                                </div>
-                                <p className='header'>{data.fakultas}</p>
-                                <p className='schedule'>{data.jadwal}</p>
-                                <div className='center'>
-                                    <input type='button' value={data.no_kandidat} className='id-choice' onClick={props.Onsubmit}/>
-                                </div>
-                            </div>  
-                        </Col>  
-                    ))}
-                </Row>
-            </Container>
-        )
-    }
-}
-
 class UserPage extends Component{
     constructor(props){
         super(props);
@@ -83,7 +44,29 @@ class UserPage extends Component{
                         Mission of candidat, you just click image. Choose the right candidate for your lead organization
                     </p>
                 </Alert>
-                <ExtractData loading={this.state.loading} err={this.props.err} success={this.props.success} error={this.props.error} Onsubmit={this.submit} api={this.props.kandidat}/>
+                <Container>
+                    <h4 className='message-of-python'>{this.props.success||this.props.error || this.props.err}</h4>
+                    <Row>
+                        {this.props.kandidat && this.props.kandidat.map(data=>(
+                            <Col sm={6}>
+                                <div key={data.id} className='parent-vote'>
+                                    <div className='for-image'>
+                                        <p className='name-candidate'>{data.nama}</p>
+                                        <img src={'data:image/png;base64, '+data.foto} alt={data.nama} className='image-vote'/>
+                                        <div className='overlay'>
+                                            <p className='text'>{data.visi_misi}</p>
+                                        </div>
+                                    </div>
+                                    <p className='header'>{data.fakultas}</p>
+                                    <p className='schedule'>{data.jadwal}</p>
+                                    <div className='center'>
+                                        <input type='button' value={data.no_kandidat} className='id-choice' onClick={this.submit}/>
+                                    </div>
+                                </div>  
+                            </Col>  
+                        ))}
+                    </Row>
+                </Container>
             </div>
         )
     }
