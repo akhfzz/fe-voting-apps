@@ -29,7 +29,7 @@ export function Footer(){
                     <a target='_blank' rel='noreferrer' href='https://instagram.com/dsc.unjani_yogyakarta?utm_medium=copy_link' data-text='Instagram'>
                         <FontAwesomeIcon icon={faInstagram}/>
                     </a>
-                    <a target='_blank' rel='noreferrer' href='https://chat.whatsapp.com/GUw7KhF5Jk0JGpzVUeqNvP' data-text='Whatsapp'>
+                    <a target='_blank' rel='noreferrer' href='#' data-text='Whatsapp'>
                         <FontAwesomeIcon icon={faWhatsapp}/>
                     </a>
                 </div>
