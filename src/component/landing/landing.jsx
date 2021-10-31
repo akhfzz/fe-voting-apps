@@ -68,7 +68,7 @@ class LandingPage extends Component{
     render(){
         return(
             <div>
-                <VoterNav brand='Vote App' documentation='Documentation' accountOrganizer='Organization Account?'/>
+                <VoterNav brand='Vote App' documentation='Documentation'/>
 
                 <div className='box'>
                     <form onSubmit={this.loginUser} className='form-box' data-aos="fade-right">

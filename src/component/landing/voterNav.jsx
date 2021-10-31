@@ -17,9 +17,6 @@ export function VoterNav({brand, accountOrganizer, documentation, ...props}){
                     <Link to='' className='brand'>{brand}</Link>
                 </li>
                 <li className='list-right'>
-                    <Link to='/organisasi'>{accountOrganizer}</Link>
-                </li>
-                <li className='list-right'>
                     <Link to='/documentation'>{documentation}</Link>
                 </li> 
                 <li className='list-right'>
