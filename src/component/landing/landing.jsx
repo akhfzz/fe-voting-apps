@@ -1,43 +1,32 @@
 import React, {Component} from "react";
-import { Carousel } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import community from '../../image/dsc.jpeg';
-import univ from '../../image/unjani.jpg';
 import './landing.scss';
 import { VoterNav } from './voterNav';
 import { connect } from "react-redux";
 import { userSignin } from '../../redux/action';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export function Footer(){
     return(
-        <div className='footer'>
-            <div data-aos='fade-down'>
-                <h5 className='text-footer'>DSC TEAM INFO</h5>
-                <h6 className='universitas-name'>UNIVERSITAS JENDERAL ACHMAD YANI YOGYAKARTA</h6>
-                <h6 className='universitas-name'>Kampus 1:</h6>
-                <p className='address'> Jl. Siliwangi, Ringroad Barat, Banyuraden, Gamping, Sleman
-                    Daerah Istimewa Yogyakarta 55293</p>
-            </div>
-            <div className='main center'>
+            <footer>
                 <div className='x center'>
-                    <a target='_blank' rel='noreferrer' href='https://instagram.com/dsc.unjani_yogyakarta?utm_medium=copy_link' data-text='Instagram'>
-                        <FontAwesomeIcon icon={faInstagram}/>
+                    <a target='_blank' rel='noreferrer' href='https://instagram.com/dsc.unjani_yogyakarta' data-text='check our IG!'>
+                            <FontAwesomeIcon icon={faInstagram}/>
                     </a>
-                    <a target='_blank' rel='noreferrer' href='#' data-text='Whatsapp'>
-                        <FontAwesomeIcon icon={faWhatsapp}/>
+                    <a target='_blank' rel='noreferrer' href='https://www.youtube.com/channel/UCMlDSZLPzPKf6cfHbFhECvg' data-text='check our Yt Channel!'>
+                            <FontAwesomeIcon icon={faYoutube}/>
+                    </a>
+                    <a target='_blank' rel='noreferrer' href='mailto:dsc.unjaniyogyakarta@gmail.com' data-text='Feel Free to Ask!'>
+                            <FontAwesomeIcon icon={faEnvelope}/>
                     </a>
                 </div>
-            </div>
-            <footer>
-                DEVELOPMENT STUDENT CLUB of UNJAYA
+                <p>&copy; 2021 Developer Student Clubs of Universitas Jenderal Achmad Yani Yogyakarta. All rights reserved.</p>
             </footer>
-        </div>
     )
 }
 
@@ -79,28 +68,8 @@ class LandingPage extends Component{
     render(){
         return(
             <div>
-                <Carousel>
-                    <Carousel.Item>
-                        <img
-                            className="d-block picturer-carousel1"
-                            src={community}
-                            alt="First slide"
-                        />
-                        <Carousel.Caption>
-                            <h2 className='caption-univ'>DSC UNJANI TEAM</h2>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block picturer-carousel2"
-                            src={univ}
-                            alt="Second slide"
-                        />
-                    </Carousel.Item>
-                </Carousel>
-                <VoterNav brand='VoteApps' documentation='Documentation' accountOrganizer='Organization Account?'/>
-                {/* <Row>
-                    <Col xs={12} md={8}> */}
+                <VoterNav brand='Vote App' documentation='Documentation' accountOrganizer='Organization Account?'/>
+
                 <div className='box'>
                     <form onSubmit={this.loginUser} className='form-box' data-aos="fade-right">
                         <div className='headerUp'>
