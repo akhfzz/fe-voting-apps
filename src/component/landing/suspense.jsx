@@ -12,7 +12,7 @@ export function SuspenseProduct(){
     return(
         <div className='products'>
             <div className='child-products'>
-                <img src={Logo} className='logo-product' alt='ZallApps'/>
+                <img src={Logo} className='logo-product' alt='DSC Unjaya Votign APP v2.0'/>
             </div>
         </div>
     )
