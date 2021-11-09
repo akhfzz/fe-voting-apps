@@ -36,7 +36,13 @@
 }
 
 body{
+    // min-height: 100vh;
+
+    display: block;
+    flex-direction: column;
     margin: 0;
+    padding: 0;
+
 }
 .ultra{
     list-style-type: None;
@@ -49,12 +55,13 @@ body{
     float: right;
 }
 .list-left{
-    float: left;
+    // float: left;
+    display: inline-block;
 }
 .list-right a, .list-left a{
     text-decoration: None;
     color: black;
-    display: block;
+    display: inline-block;
     text-align: center;
     padding: 14px 16px;
 }
@@ -181,6 +188,10 @@ body{
     background-color: rgb(113, 238, 113);
 }
 footer{
+    // margin-top: auto;
+    // position: fixed;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     background-color: rgb(250, 210, 0207);
     font-size: 15px;
