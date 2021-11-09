@@ -9,7 +9,7 @@ export function VoterNav({brand, accountOrganizer, documentation, ...props}){
                 <li className='list-left'>
                     <img 
                         src={Logo} 
-                        alt='logo dsc unjani'
+                        alt='logo dsc unjaya'
                         height={50}
                     />
                 </li>
