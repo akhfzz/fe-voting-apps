@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import 'aos/dist/aos.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { Footer } from './landing'
 
 export function Documentation(){
     useEffect(() => {
@@ -38,6 +39,7 @@ export function Documentation(){
                 <p className='requir'>It takes 3-minutes for the email to be sent to the destination address</p>
                 <p className='requir'>You don't need to delete or update the dataset because your organization name has become session and your dataset table will automatically update and delete</p>
             </div>
+            <Footer/>
         </>
     )
 }
