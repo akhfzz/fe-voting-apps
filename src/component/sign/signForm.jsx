@@ -100,7 +100,7 @@ class SignupForm extends Component{
                             </div>
                         ):(
                             <div>
-                                Login
+                                Submit
                             </div>
                         )
                         }
@@ -144,9 +144,7 @@ class SignupForm extends Component{
                         {this.validator.message('password', this.state.password, 'required|min:5|max:10', {className: 'text-danger'})}
 
                         <button type='submit' className='buttonSignup'>Register</button>
-                        <button className='buttonSignin' onClick={this.newUser}>
-                            <FontAwesomeIcon icon={faArrowRight}/>
-                        </button>
+                        <button className='buttonSignin' onClick={this.newUser}>Login</button>
                     </form>
                     </div>
                     )
