@@ -41,7 +41,7 @@ class UserPage extends Component{
     
         return(
             <div>
-                <UsersNav check='/user' visual='/visual' logout={Logout}/>
+                <UsersNav check='/user' logout={Logout}/>
                 <Alert variant="success">
                     <Alert.Heading>Event {this.props.event}</Alert.Heading>
                     <p className='message-of-python'>
